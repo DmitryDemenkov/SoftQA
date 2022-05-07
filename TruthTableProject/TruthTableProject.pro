@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         main.cpp \
         node.cpp \
+        not.cpp \
         operation.cpp \
         variable.cpp
 
@@ -20,5 +21,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     node.h \
+    not.h \
     operation.h \
     variable.h

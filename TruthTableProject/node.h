@@ -2,6 +2,10 @@
 #define NODE_H
 #include <QCoreApplication>
 
+/*!
+ * \brief Класс, описывающий абстрактный узел
+ *                          дерева разбора выражения
+ */
 class Node
 {
 public:
@@ -9,19 +13,19 @@ public:
     virtual ~Node() = 0;
 
     /*!
-     * \brief getValue получить текущее значение узла
+     * \brief Получить текущее значение узла
      * \return числовое значение узла
      */
     virtual int getValue() = 0;
 
      /*!
-      * \brief getStringId получить текущее строковое представление узла
+      * \brief Получить текущее строковое представление узла
       * \return строковое представление узла
       */
      QString getStringId() const;
 
 protected:
-    QString strind_id; ///< строковое представление узла
+    QString string_id; ///< Строковое представление узла
 };
 
 #endif // NODE_H

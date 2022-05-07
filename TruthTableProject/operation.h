@@ -32,6 +32,10 @@ protected:
 private:
     Node* leftOperand;     ///< Левый операнд операции
     Node* rightOperand;    ///< Правый операнд операции
+
+#ifdef QT_DEBUG
+    friend class Test_Not_getValue;
+#endif // friend test classes
 };
 
 #endif // OPERATION_H

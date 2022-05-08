@@ -13,6 +13,7 @@ SOURCES += \
         node.cpp \
         operations/not.cpp \
         operation.cpp \
+        operations/or.cpp \
         variable.cpp
 
 # Default rules for deployment.
@@ -25,4 +26,5 @@ HEADERS += \
     node.h \
     operations/not.h \
     operation.h \
+    operations/or.h \
     variable.h

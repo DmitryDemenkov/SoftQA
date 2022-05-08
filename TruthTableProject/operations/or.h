@@ -17,6 +17,10 @@ public:
      * \return результат операции
      */
     int getValue() override;
+
+#ifdef QT_DEBUG
+    friend class Test_Or_getValue;
+#endif // friend test classes
 };
 
 #endif // OR_H

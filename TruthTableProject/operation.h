@@ -36,6 +36,7 @@ private:
 #ifdef QT_DEBUG
     friend class Test_Not_getValue;
     friend class Test_And_getValue;
+    friend class Test_Or_getValue;
 #endif // friend test classes
 };
 

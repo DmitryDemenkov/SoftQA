@@ -13,9 +13,11 @@ SOURCES += \
         ../TruthTableProject/operation.cpp \
         ../TruthTableProject/operations/not.cpp \
         ../TruthTableProject/operations/and.cpp \
+        ../TruthTableProject/operations/or.cpp \
         main.cpp \
         test_and_getvalue.cpp \
-        test_not_getvalue.cpp
+        test_not_getvalue.cpp \
+        test_or_getvalue.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -24,4 +26,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     test_and_getvalue.h \
-    test_not_getvalue.h
+    test_not_getvalue.h \
+    test_or_getvalue.h

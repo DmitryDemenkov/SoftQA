@@ -11,8 +11,8 @@ SOURCES += \
         ../TruthTableProject/node.cpp \
         ../TruthTableProject/variable.cpp \
         ../TruthTableProject/operation.cpp \
-        ../TruthTableProject/not.cpp \
-        ../TruthTableProject/and.cpp \
+        ../TruthTableProject/operations/not.cpp \
+        ../TruthTableProject/operations/and.cpp \
         main.cpp \
         test_and_getvalue.cpp \
         test_not_getvalue.cpp

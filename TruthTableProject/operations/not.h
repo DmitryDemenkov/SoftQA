@@ -1,6 +1,6 @@
 #ifndef NOT_H
 #define NOT_H
-#include "operation.h"
+#include "../operation.h"
 
 /*!
  * \brief Класс, описывающий узел операции

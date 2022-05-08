@@ -2,7 +2,7 @@
 #include "../TruthTableProject/node.h"
 #include "../TruthTableProject/operation.h"
 #include "../TruthTableProject/variable.h"
-#include "../TruthTableProject/not.h"
+#include "../TruthTableProject/operations/not.h"
 
 Test_Not_getValue::Test_Not_getValue() { }
 

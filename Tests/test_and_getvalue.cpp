@@ -2,7 +2,7 @@
 #include "../TruthTableProject/node.h"
 #include "../TruthTableProject/operation.h"
 #include "../TruthTableProject/variable.h"
-#include "../TruthTableProject/and.h"
+#include "../TruthTableProject/operations/and.h"
 
 Test_And_getValue::Test_And_getValue() { }
 

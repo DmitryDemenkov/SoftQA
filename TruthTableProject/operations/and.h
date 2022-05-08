@@ -1,6 +1,6 @@
 #ifndef AND_H
 #define AND_H
-#include "operation.h"
+#include "../operation.h"
 
 /*!
  * \brief Класс, описывающий узел операции

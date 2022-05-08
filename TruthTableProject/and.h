@@ -17,6 +17,10 @@ public:
      * \return результат операции
      */
     int getValue() override;
+
+#ifdef QT_DEBUG
+    friend class Test_And_getValue;
+#endif // friend test classes
 };
 
 #endif // AND_H

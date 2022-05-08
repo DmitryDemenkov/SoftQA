@@ -12,6 +12,9 @@ SOURCES += \
         ../TruthTableProject/variable.cpp \
         ../TruthTableProject/operation.cpp \
         ../TruthTableProject/not.cpp \
+        ../TruthTableProject/and.cpp \
+        main.cpp \
+        test_and_getvalue.cpp \
         test_not_getvalue.cpp
 
 # Default rules for deployment.
@@ -20,4 +23,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    test_and_getvalue.h \
     test_not_getvalue.h

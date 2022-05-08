@@ -52,5 +52,3 @@ void Test_Not_getValue::DoubleInversion()
 
     QCOMPARE(value, expectedValue);
 }
-
-QTEST_APPLESS_MAIN(Test_Not_getValue);

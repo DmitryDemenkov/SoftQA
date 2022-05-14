@@ -11,6 +11,7 @@ SOURCES += \
         operations/and.cpp \
         main.cpp \
         node.cpp \
+        operations/eq.cpp \
         operations/imply.cpp \
         operations/not.cpp \
         operation.cpp \
@@ -26,6 +27,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     operations/and.h \
     node.h \
+    operations/eq.h \
     operations/imply.h \
     operations/not.h \
     operation.h \

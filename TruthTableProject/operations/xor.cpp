@@ -14,8 +14,8 @@ int Xor::getValue()
     Node* rightOperand = this->getRightOperand(); // правый операед выражения
 
     if (leftOperand != NULL && rightOperand != NULL) // Если операнды определены
-        return (!getLeftOperand()->getValue() && getRightOperand()->getValue()) ||
-                (getLeftOperand()->getValue() && !getRightOperand()->getValue()); // вернуть результат исключающего или значений операндов
+        return (!leftOperand->getValue() && rightOperand->getValue()) ||
+                (leftOperand->getValue() && !rightOperand->getValue()); // вернуть результат исключающего или значений операндов
     else
         return 0;
 }

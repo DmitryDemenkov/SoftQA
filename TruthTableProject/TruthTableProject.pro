@@ -14,6 +14,7 @@ SOURCES += \
         operations/not.cpp \
         operation.cpp \
         operations/or.cpp \
+        operations/xor.cpp \
         variable.cpp
 
 # Default rules for deployment.
@@ -27,4 +28,5 @@ HEADERS += \
     operations/not.h \
     operation.h \
     operations/or.h \
+    operations/xor.h \
     variable.h

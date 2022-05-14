@@ -3,6 +3,7 @@
 #include "test_not_getvalue.h"
 #include "test_or_getvalue.h"
 #include "test_xor_getvalue.h"
+#include "test_imply_getvalue.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,11 +11,13 @@ int main(int argc, char *argv[])
     Test_Not_getValue testNot;
     Test_Or_getValue testOr;
     Test_Xor_getValue testXor;
+    Test_Imply_getValue testImply;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
     QTest::qExec(&testOr, argc, argv);
     QTest::qExec(&testXor, argc, argv);
+    QTest::qExec(&testImply, argc, argv);
 
     return 0;
 }

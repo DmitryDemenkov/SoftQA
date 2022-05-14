@@ -38,6 +38,7 @@ private:
     friend class Test_And_getValue;
     friend class Test_Or_getValue;
     friend class Test_Xor_getValue;
+    friend class Test_Imply_getValue;
 #endif // friend test classes
 };
 

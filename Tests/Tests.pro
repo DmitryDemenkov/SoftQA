@@ -15,8 +15,10 @@ SOURCES += \
         ../TruthTableProject/operations/and.cpp \
         ../TruthTableProject/operations/or.cpp \
         ../TruthTableProject/operations/xor.cpp \
+        ../TruthTableProject/operations/imply.cpp \
         main.cpp \
         test_and_getvalue.cpp \
+        test_imply_getvalue.cpp \
         test_not_getvalue.cpp \
         test_or_getvalue.cpp \
         test_xor_getvalue.cpp
@@ -28,6 +30,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     test_and_getvalue.h \
+    test_imply_getvalue.h \
     test_not_getvalue.h \
     test_or_getvalue.h \
     test_xor_getvalue.h

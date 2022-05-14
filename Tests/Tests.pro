@@ -17,10 +17,12 @@ SOURCES += \
         ../TruthTableProject/operations/xor.cpp \
         ../TruthTableProject/operations/imply.cpp \
         ../TruthTableProject/operations/eq.cpp \
+        ../TruthTableProject/operations/nand.cpp \
         main.cpp \
         test_and_getvalue.cpp \
         test_eq_getvalue.cpp \
         test_imply_getvalue.cpp \
+        test_nand_getvalue.cpp \
         test_not_getvalue.cpp \
         test_or_getvalue.cpp \
         test_xor_getvalue.cpp
@@ -34,6 +36,7 @@ HEADERS += \
     test_and_getvalue.h \
     test_eq_getvalue.h \
     test_imply_getvalue.h \
+    test_nand_getvalue.h \
     test_not_getvalue.h \
     test_or_getvalue.h \
     test_xor_getvalue.h

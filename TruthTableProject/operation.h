@@ -40,6 +40,7 @@ private:
     friend class Test_Xor_getValue;
     friend class Test_Imply_getValue;
     friend class Test_Eq_getValue;
+    friend class Test_Nand_getValue;
 #endif // friend test classes
 };
 

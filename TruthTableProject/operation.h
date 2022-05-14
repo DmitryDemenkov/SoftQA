@@ -39,6 +39,7 @@ private:
     friend class Test_Or_getValue;
     friend class Test_Xor_getValue;
     friend class Test_Imply_getValue;
+    friend class Test_Eq_getValue;
 #endif // friend test classes
 };
 

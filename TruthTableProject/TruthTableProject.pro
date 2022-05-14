@@ -14,6 +14,7 @@ SOURCES += \
         operations/eq.cpp \
         operations/imply.cpp \
         operations/nand.cpp \
+        operations/nor.cpp \
         operations/not.cpp \
         operation.cpp \
         operations/or.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     operations/eq.h \
     operations/imply.h \
     operations/nand.h \
+    operations/nor.h \
     operations/not.h \
     operation.h \
     operations/or.h \

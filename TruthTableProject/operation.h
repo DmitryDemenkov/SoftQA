@@ -41,6 +41,7 @@ private:
     friend class Test_Imply_getValue;
     friend class Test_Eq_getValue;
     friend class Test_Nand_getValue;
+    friend class Test_Nor_getValue;
 #endif // friend test classes
 };
 

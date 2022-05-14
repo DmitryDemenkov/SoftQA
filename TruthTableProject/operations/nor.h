@@ -18,6 +18,9 @@ public:
      */
     int getValue() override;
 
+#ifdef QT_DEBUG
+    friend class Test_Nor_getValue;
+#endif // friend test classes
 };
 
 #endif // NOR_H

@@ -66,5 +66,30 @@ void Operation::setOperands(Node* leftOperand, Node* rightOperand)
 
 Operation* Operation::getOperation(QString name)
 {
-    return NULL;
+    if (name == "not")
+        return new Not();
+
+    else if (name == "and")
+        return new And();
+
+    else if (name == "or")
+        return new Or();
+
+    else if (name == "xor")
+        return new Xor();
+
+    else if (name == "imply")
+        return new Imply();
+
+    else if (name == "eq")
+        return new Eq();
+
+    else if (name == "nand")
+        return new Nand();
+
+    else if (name == "nor")
+        return new Nor();
+
+    else
+        return NULL;
 }

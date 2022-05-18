@@ -37,6 +37,13 @@ public:
      */
     void setOperands(Node* leftOperand, Node* rightOperand = NULL);
 
+    /*!
+     * \brief Создать операцию заданного типа
+     * \param name название типа операции
+     * \return
+     */
+    static Operation* getOperation(QString name);
+
 protected:
     int operationPriority;  ///< Приоритет операции
     QString operationSign;  ///< Знак операции

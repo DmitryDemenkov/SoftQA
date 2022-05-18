@@ -8,6 +8,7 @@
 #include "test_nand_getvalue.h"
 #include "test_nor_getvalue.h"
 #include "test_operation_setoperands.h"
+#include "test_operation_getoperation.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
     Test_Nand_getValue testNand;
     Test_Nor_getValue testNor;
     Test_Operation_setOperands testSetOperations;
+    Test_Operation_getOperation testGetOperation;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
@@ -30,6 +32,7 @@ int main(int argc, char *argv[])
     QTest::qExec(&testNand, argc, argv);
     QTest::qExec(&testNor, argc, argv);
     QTest::qExec(&testSetOperations, argc, argv);
+    QTest::qExec(&testGetOperation, argc, argv);
 
     return 0;
 }

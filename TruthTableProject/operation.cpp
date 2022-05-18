@@ -1,5 +1,12 @@
 #include "operation.h"
 #include "operations/not.h"
+#include "operations/and.h"
+#include "operations/or.h"
+#include "operations/xor.h"
+#include "operations/imply.h"
+#include "operations/eq.h"
+#include "operations/nand.h"
+#include "operations/nor.h"
 
 Operation::Operation()
 {
@@ -55,4 +62,9 @@ void Operation::setOperands(Node* leftOperand, Node* rightOperand)
         string_id = operationSign + operandStrings[0];
     else
         string_id = operandStrings[0] + operationSign + operandStrings[1];
+}
+
+Operation* Operation::getOperation(QString name)
+{
+    return NULL;
 }

@@ -26,6 +26,7 @@ SOURCES += \
         test_nand_getvalue.cpp \
         test_nor_getvalue.cpp \
         test_not_getvalue.cpp \
+        test_operation_getoperation.cpp \
         test_operation_setoperands.cpp \
         test_or_getvalue.cpp \
         test_xor_getvalue.cpp
@@ -42,6 +43,7 @@ HEADERS += \
     test_nand_getvalue.h \
     test_nor_getvalue.h \
     test_not_getvalue.h \
+    test_operation_getoperation.h \
     test_operation_setoperands.h \
     test_or_getvalue.h \
     test_xor_getvalue.h

@@ -47,11 +47,11 @@ void Operation::setOperands(Node* leftOperand, Node* rightOperand)
         if (operands[i] != NULL)
         {
             operandStrings[i] = operands[i]->getStringId();
-            int operandPriority = ((Operation*)operands[i])->getOperationPriority();
+            Operation* operand = dynamic_cast<Operation*>(operands[i]);
 
-            if (dynamic_cast<Operation*>(operands[i]) &&                     // если операнд является операцией и
-                ((i == 0 && operandPriority < this->operationPriority) ||    // (приоритет левого операнда меньше или
-                    (i == 1 && operandPriority <= this->operationPriority))) // приоритет правой операции меньше либо равен)
+            if (operand != NULL &&                                                        // если операнд является операцией и
+                ((i == 0 && operand->getOperationPriority() < this->operationPriority) || // (приоритет левого операнда меньше или
+                (i == 1 && operand->getOperationPriority() <= this->operationPriority)))  // приоритет правой операции меньше либо равен)
             {
                 operandStrings[i].insert(0, '(').append(')');  // добавить скобки к строковому представоению операнда
             }

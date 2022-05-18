@@ -23,10 +23,36 @@ Node* Operation::getRightOperand() const
 
 int Operation::getOperationPriority() const
 {
-    return 0;
+    // Вернуть приоритет операции
+    return operationPriority;
 }
 
 void Operation::setOperands(Node* leftOperand, Node* rightOperand)
 {
-    return;
+    // Установить переданные операнды операции
+    this->leftOperand = leftOperand;
+    this->rightOperand = rightOperand;
+
+    // Составить строковое представление узла операции
+    Node* operands[2] = { leftOperand, rightOperand };
+    QString operandStrings[2] = { "", "" };
+    for (int i = 0; i < 2; i++)
+        if (operands[i] != NULL)
+        {
+            operandStrings[i] = operands[i]->getStringId();
+            int operandPriority = ((Operation*)operands[i])->getOperationPriority();
+
+            if (dynamic_cast<Operation*>(operands[i]) &&                     // если операнд является операцией и
+                ((i == 0 && operandPriority < this->operationPriority) ||    // (приоритет левого операнда меньше или
+                    (i == 1 && operandPriority <= this->operationPriority))) // приоритет правой операции меньше либо равен)
+            {
+                operandStrings[i].insert(0, '(').append(')');  // добавить скобки к строковому представоению операнда
+            }
+        }
+
+    // Установить строковое представление узла операции
+    if (dynamic_cast<Not*>(this))
+        string_id = operationSign + operandStrings[0];
+    else
+        string_id = operandStrings[0] + operationSign + operandStrings[1];
 }

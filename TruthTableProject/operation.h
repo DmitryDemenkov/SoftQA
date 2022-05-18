@@ -24,6 +24,19 @@ public:
      */
     Node* getRightOperand() const;
 
+    /*!
+     * \brief Получить приоритет операции
+     * \return тип операции
+     */
+    int getOperationPriority() const;
+
+    /*!
+     * \brief Задать операнды операции
+     * \param leftOperand левый операнд
+     * \param rightOperand правый операнд
+     */
+    void setOperands(Node* leftOperand, Node* rightOperand = NULL);
+
 protected:
     int operationPriority;  ///< Приоритет операции
     QString operationSign;  ///< Знак операции

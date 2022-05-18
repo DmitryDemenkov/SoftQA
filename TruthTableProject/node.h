@@ -26,6 +26,10 @@ public:
 
 protected:
     QString string_id; ///< Строковое представление узла
+
+#ifdef QT_DEBUG
+    friend class Test_Operation_setOperands;
+#endif // friend test classes
 };
 
 #endif // NODE_H

@@ -1,3 +1,4 @@
+#include <QRegExp>
 #include "errorcontroller.h"
 
 ErrorController::ErrorController() { }

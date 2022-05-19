@@ -1,5 +1,6 @@
 QT += testlib
 QT += xml
+QT += core5compat
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -25,6 +26,7 @@ SOURCES += \
         test_and_getvalue.cpp \
         test_eq_getvalue.cpp \
         test_errorcontroller_isrootnodecorrect.cpp \
+        test_errorcontroller_isvariablecorrect.cpp \
         test_imply_getvalue.cpp \
         test_nand_getvalue.cpp \
         test_nor_getvalue.cpp \
@@ -43,6 +45,7 @@ HEADERS += \
     test_and_getvalue.h \
     test_eq_getvalue.h \
     test_errorcontroller_isrootnodecorrect.h \
+    test_errorcontroller_isvariablecorrect.h \
     test_imply_getvalue.h \
     test_nand_getvalue.h \
     test_nor_getvalue.h \

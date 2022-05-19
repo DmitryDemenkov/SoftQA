@@ -4,7 +4,7 @@ ErrorController::ErrorController() { }
 
 bool ErrorController::isRootNodeCorrect(QDomElement xRootNode)
 {
-    return false;
+    return true;
 }
 
 bool ErrorController::isVariableCorrect(QDomNode xNode)

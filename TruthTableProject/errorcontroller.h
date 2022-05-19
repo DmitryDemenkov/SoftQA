@@ -90,6 +90,10 @@ private:
      * \param additionMsg доролнительная информация об ошибке
      */
     void throwError(ErrorType errorType, QString* additionMsg = NULL);
+
+#ifdef QT_DEBUG
+    friend class Test_ErrorController_isRootNodeCorrect;
+#endif // friend test classes
 };
 
 #endif // ERRORCONTROLLER_H

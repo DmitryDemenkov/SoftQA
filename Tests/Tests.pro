@@ -1,4 +1,5 @@
 QT += testlib
+QT += xml
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -19,9 +20,11 @@ SOURCES += \
         ../TruthTableProject/operations/eq.cpp \
         ../TruthTableProject/operations/nand.cpp \
         ../TruthTableProject/operations/nor.cpp \
+        ../TruthTableProject/errorcontroller.cpp \
         main.cpp \
         test_and_getvalue.cpp \
         test_eq_getvalue.cpp \
+        test_errorcontroller_isrootnodecorrect.cpp \
         test_imply_getvalue.cpp \
         test_nand_getvalue.cpp \
         test_nor_getvalue.cpp \
@@ -39,6 +42,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     test_and_getvalue.h \
     test_eq_getvalue.h \
+    test_errorcontroller_isrootnodecorrect.h \
     test_imply_getvalue.h \
     test_nand_getvalue.h \
     test_nor_getvalue.h \

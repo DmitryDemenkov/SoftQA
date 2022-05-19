@@ -9,6 +9,7 @@
 #include "test_nor_getvalue.h"
 #include "test_operation_setoperands.h"
 #include "test_operation_getoperation.h"
+#include "test_errorcontroller_isrootnodecorrect.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     Test_Nor_getValue testNor;
     Test_Operation_setOperands testSetOperations;
     Test_Operation_getOperation testGetOperation;
+    Test_ErrorController_isRootNodeCorrect testIsRootNodeCorrect;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
@@ -33,6 +35,7 @@ int main(int argc, char *argv[])
     QTest::qExec(&testNor, argc, argv);
     QTest::qExec(&testSetOperations, argc, argv);
     QTest::qExec(&testGetOperation, argc, argv);
+    QTest::qExec(&testIsRootNodeCorrect, argc, argv);
 
     return 0;
 }

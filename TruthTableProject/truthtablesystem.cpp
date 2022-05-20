@@ -39,7 +39,25 @@ Node* TruthTableSystem::findNode(Node *node)
 
 int TruthTableSystem::insertNode(Node *node)
 {
-    return 0;
+    int isVariable = 0; // считать заданный узел операцией
+    if (dynamic_cast<Variable*>(node)) // если заданный узел - переменная
+    {
+        int index = 0;
+
+        // Найти позицию первого узла не являющегося переменной
+        while (index < nodes.length() && dynamic_cast<Variable*>(nodes[index]))
+            index++;
+
+        // Вставить узел на найденную позицию
+        nodes.insert(index, node);
+        isVariable = 1; // считать заданный узел переменной
+    }
+    else
+    {
+        // Добавить узел в конец вектора
+        nodes.append(node);
+    }
+    return isVariable;
 }
 
 void TruthTableSystem::makeTruthTable()

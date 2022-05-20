@@ -22,6 +22,7 @@ SOURCES += \
         operation.cpp \
         operations/or.cpp \
         operations/xor.cpp \
+        truthtablesystem.cpp \
         variable.cpp
 
 # Default rules for deployment.
@@ -41,4 +42,5 @@ HEADERS += \
     operation.h \
     operations/or.h \
     operations/xor.h \
+    truthtablesystem.h \
     variable.h

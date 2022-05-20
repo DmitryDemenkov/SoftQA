@@ -37,6 +37,7 @@ SOURCES += \
         test_operation_setoperands.cpp \
         test_or_getvalue.cpp \
         test_truthtablesystem_findnode.cpp \
+        test_truthtablesystem_insertnode.cpp \
         test_xor_getvalue.cpp
 
 # Default rules for deployment.
@@ -58,4 +59,5 @@ HEADERS += \
     test_operation_setoperands.h \
     test_or_getvalue.h \
     test_truthtablesystem_findnode.h \
+    test_truthtablesystem_insertnode.h \
     test_xor_getvalue.h

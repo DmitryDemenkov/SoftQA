@@ -69,6 +69,7 @@ private:
 
 #ifdef QT_DEBUG
     friend class Test_TruthTableSystem_findNode;
+    friend class Test_TruthTableSystem_insertNode;
 #endif // friend test classes
 };
 

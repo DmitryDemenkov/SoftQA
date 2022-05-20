@@ -11,6 +11,7 @@
 #include "test_operation_getoperation.h"
 #include "test_errorcontroller_isrootnodecorrect.h"
 #include "test_errorcontroller_isvariablecorrect.h"
+#include "test_errorcontroller_isoperationcorrect.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
     Test_Operation_getOperation testGetOperation;
     Test_ErrorController_isRootNodeCorrect testIsRootNodeCorrect;
     Test_ErrorController_isVariableCorrect testIsVariableCorrect;
+    Test_ErrorController_isOperationCorrect testIsOperationCorrect;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
@@ -39,6 +41,7 @@ int main(int argc, char *argv[])
     QTest::qExec(&testGetOperation, argc, argv);
     QTest::qExec(&testIsRootNodeCorrect, argc, argv);
     QTest::qExec(&testIsVariableCorrect, argc, argv);
+    QTest::qExec(&testIsOperationCorrect, argc, argv);
 
     return 0;
 }

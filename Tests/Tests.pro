@@ -25,6 +25,7 @@ SOURCES += \
         main.cpp \
         test_and_getvalue.cpp \
         test_eq_getvalue.cpp \
+        test_errorcontroller_isoperationcorrect.cpp \
         test_errorcontroller_isrootnodecorrect.cpp \
         test_errorcontroller_isvariablecorrect.cpp \
         test_imply_getvalue.cpp \
@@ -44,6 +45,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     test_and_getvalue.h \
     test_eq_getvalue.h \
+    test_errorcontroller_isoperationcorrect.h \
     test_errorcontroller_isrootnodecorrect.h \
     test_errorcontroller_isvariablecorrect.h \
     test_imply_getvalue.h \

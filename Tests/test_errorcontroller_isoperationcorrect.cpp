@@ -166,7 +166,7 @@ void Test_ErrorController_isOperationCorrect::incorrectAttributeValue()
     ErrorController controller;
 
     ErrorController::ErrorType expectedErrorType = ErrorController::INCORRECT_TYPE_OF_OPERATION;
-    QString expectedMessege = "Неправильно задан тип операции «!»\nДля обозначения типа операции следуетиспользовать следующие обозначения: «not», «and», «or», «xor», «imply», «eq», «nand», «nor»";
+    QString expectedMessege = "Неправильно задан тип операции «!»\nДля обозначения типа операции следует использовать следующие обозначения: «not», «and», «or», «xor», «imply», «eq», «nand», «nor»";
 
     try
     {
@@ -182,7 +182,7 @@ void Test_ErrorController_isOperationCorrect::incorrectAttributeValue()
 
 void Test_ErrorController_isOperationCorrect::correctNode()
 {
-    QString inputFileName = "../TestsIsVariableCorrect/correctNode.xml";
+    QString inputFileName = "../TestsIsOperationCorrect/correctNode.xml";
     QDomNode docNode = getNodeFromFile(inputFileName);
 
     bool isCorrect = false;

@@ -12,6 +12,7 @@
 #include "test_errorcontroller_isrootnodecorrect.h"
 #include "test_errorcontroller_isvariablecorrect.h"
 #include "test_errorcontroller_isoperationcorrect.h"
+#include "test_truthtablesystem_findnode.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,6 +29,7 @@ int main(int argc, char *argv[])
     Test_ErrorController_isRootNodeCorrect testIsRootNodeCorrect;
     Test_ErrorController_isVariableCorrect testIsVariableCorrect;
     Test_ErrorController_isOperationCorrect testIsOperationCorrect;
+    Test_TruthTableSystem_findNode testFindNode;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
@@ -42,6 +44,7 @@ int main(int argc, char *argv[])
     QTest::qExec(&testIsRootNodeCorrect, argc, argv);
     QTest::qExec(&testIsVariableCorrect, argc, argv);
     QTest::qExec(&testIsOperationCorrect, argc, argv);
+    QTest::qExec(&testFindNode, argc, argv);
 
     return 0;
 }

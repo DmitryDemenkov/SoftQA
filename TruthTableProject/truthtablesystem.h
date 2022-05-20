@@ -66,6 +66,10 @@ private:
      * \return 1, если была вставлена переменная, 0, если операция
      */
     int insertNode(Node* node);
+
+#ifdef QT_DEBUG
+    friend class Test_TruthTableSystem_findNode;
+#endif // friend test classes
 };
 
 #endif // TRUTHTABLESYSTEM_H

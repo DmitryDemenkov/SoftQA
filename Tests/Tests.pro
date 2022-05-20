@@ -22,6 +22,7 @@ SOURCES += \
         ../TruthTableProject/operations/nand.cpp \
         ../TruthTableProject/operations/nor.cpp \
         ../TruthTableProject/errorcontroller.cpp \
+        ../TruthTableProject/truthtablesystem.cpp \
         main.cpp \
         test_and_getvalue.cpp \
         test_eq_getvalue.cpp \
@@ -35,6 +36,7 @@ SOURCES += \
         test_operation_getoperation.cpp \
         test_operation_setoperands.cpp \
         test_or_getvalue.cpp \
+        test_truthtablesystem_findnode.cpp \
         test_xor_getvalue.cpp
 
 # Default rules for deployment.
@@ -55,4 +57,5 @@ HEADERS += \
     test_operation_getoperation.h \
     test_operation_setoperands.h \
     test_or_getvalue.h \
+    test_truthtablesystem_findnode.h \
     test_xor_getvalue.h

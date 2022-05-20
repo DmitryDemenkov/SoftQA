@@ -28,7 +28,13 @@ Node* TruthTableSystem::parseExpression(QDomNode &xNode)
 
 Node* TruthTableSystem::findNode(Node *node)
 {
-    return NULL;
+    Node* desiredNode = NULL; // считать узел ненайденным
+
+    for (int i = 0; i < nodes.length() && desiredNode == NULL; i++) // для каждого элемента вектора
+        if (nodes[i]->getStringId() == node->getStringId()) // если строковое представление текущего элемента равен искомому
+            desiredNode = nodes[i]; // считать текущий элемент искомым
+
+    return desiredNode;
 }
 
 int TruthTableSystem::insertNode(Node *node)

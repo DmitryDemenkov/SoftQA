@@ -71,6 +71,7 @@ private:
     friend class Test_TruthTableSystem_findNode;
     friend class Test_TruthTableSystem_insertNode;
     friend class Test_TruthTableSystem_parseExpression;
+    friend class Test_TruthTableSystem_makeTruthTable;
 #endif // friend test classes
 };
 

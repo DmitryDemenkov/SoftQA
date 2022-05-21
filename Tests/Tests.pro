@@ -38,6 +38,7 @@ SOURCES += \
         test_or_getvalue.cpp \
         test_truthtablesystem_findnode.cpp \
         test_truthtablesystem_insertnode.cpp \
+        test_truthtablesystem_maketruthtable.cpp \
         test_truthtablesystem_parseexpression.cpp \
         test_xor_getvalue.cpp
 
@@ -61,5 +62,6 @@ HEADERS += \
     test_or_getvalue.h \
     test_truthtablesystem_findnode.h \
     test_truthtablesystem_insertnode.h \
+    test_truthtablesystem_maketruthtable.h \
     test_truthtablesystem_parseexpression.h \
     test_xor_getvalue.h

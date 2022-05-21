@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<operation type="and">
+		<variable>X</variable>
+		<operation type="and">
+			<operation type="and">
+				<variable>X</variable>
+				<variable>Z</variable>
+			</operation>
+			<variable>Y</variable>
+		</operation>
+	</operation
+</root>

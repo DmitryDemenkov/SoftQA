@@ -14,6 +14,7 @@
 #include "test_errorcontroller_isoperationcorrect.h"
 #include "test_truthtablesystem_findnode.h"
 #include "test_truthtablesystem_insertnode.h"
+#include "test_truthtablesystem_parseexpression.h"
 
 int main(int argc, char *argv[])
 {
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
     Test_ErrorController_isOperationCorrect testIsOperationCorrect;
     Test_TruthTableSystem_findNode testFindNode;
     Test_TruthTableSystem_insertNode testInsertNode;
+    Test_TruthTableSystem_parseExpression testParseExpression;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
@@ -48,6 +50,7 @@ int main(int argc, char *argv[])
     QTest::qExec(&testIsOperationCorrect, argc, argv);
     QTest::qExec(&testFindNode, argc, argv);
     QTest::qExec(&testInsertNode, argc, argv);
+    QTest::qExec(&testParseExpression, argc, argv);
 
     return 0;
 }

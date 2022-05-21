@@ -18,7 +18,18 @@ void TruthTableSystem::setXRootNode(QDomNode xNode)
 
 QStringList TruthTableSystem::getTruthTable(QVector<QVector<int>> &values)
 {
-    return QStringList();
+    parseExpression(xRootNode); // составить векор узлов выражения на основе его корня
+
+    // Составить список подвыражения на основе строковых представлений узлов
+    QStringList subExpressions;
+    for (int i = 0; i < nodes.length(); i++)
+        subExpressions.append(nodes[i]->getStringId());
+
+    // Составить таблицу истинности на основе векора узлов
+    makeTruthTable();
+
+    values = this->values;
+    return subExpressions;
 }
 
 Node* TruthTableSystem::parseExpression(QDomNode &xNode)

@@ -16,6 +16,7 @@
 #include "test_truthtablesystem_insertnode.h"
 #include "test_truthtablesystem_parseexpression.h"
 #include "test_truthtablesystem_maketruthtable.h"
+#include "test_truthtablesystem_gettruthtable.h"
 
 int main(int argc, char *argv[])
 {
@@ -36,6 +37,7 @@ int main(int argc, char *argv[])
     Test_TruthTableSystem_insertNode testInsertNode;
     Test_TruthTableSystem_parseExpression testParseExpression;
     Test_TruthTableSystem_makeTruthTable testMakeTruthTable;
+    Test_TruthTableSystem_getTruthTable testGetTruthTable;
 
     QTest::qExec(&testAnd, argc, argv);
     QTest::qExec(&testNot, argc, argv);
@@ -54,6 +56,7 @@ int main(int argc, char *argv[])
     QTest::qExec(&testInsertNode, argc, argv);
     QTest::qExec(&testParseExpression, argc, argv);
     QTest::qExec(&testMakeTruthTable, argc, argv);
+    QTest::qExec(&testGetTruthTable, argc, argv);
 
     return 0;
 }

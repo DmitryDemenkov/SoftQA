@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<operation type="or">
+		<operation type="and">
+			<operation type="not">
+				<variable>X</variable>
+			</operation>
+			<variable>Y</variable>
+		</operation>
+		<operation type="and">
+			<operation type="not">
+				<variable>X</variable>
+			</operation>
+			<variable>Y</variable>
+		</operation>
+	</operation>
+</root>

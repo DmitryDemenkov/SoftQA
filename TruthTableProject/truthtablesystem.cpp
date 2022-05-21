@@ -102,5 +102,25 @@ int TruthTableSystem::insertNode(Node *node)
 
 void TruthTableSystem::makeTruthTable()
 {
-    return ;
+    // Считать кол-во строк в таблице равным 2^variableAmount
+    int amount = pow(2, variablesAmount);
+
+    for (int i = 0; i < amount; i++) // для каждого значения от 0 до кол-ва строк
+    {
+        QVector<int> vector;
+
+        // Преобразовать текущее значение в двоичной системе
+        QString stringAmount = QString("%1").arg(i, variablesAmount, 2, QChar('0'));
+
+        // Каждой переменной выражения присвоить соответствующую цифру двоичной записи текущего значения
+        for (int j = 0; j < variablesAmount; j++)
+            ((Variable*)nodes[j])->setValue(QString(stringAmount[j]).toInt());
+
+        // Добавить в строку значения всех узлов выражения
+        for (int j = 0; j < nodes.length(); j++)
+            vector.append(nodes[j]->getValue());
+
+        // Добавить строку в таблицу
+        values.append(vector);
+    }
 }

@@ -54,6 +54,20 @@ public:
      */
     bool isOperationCorrect(QDomNode &xNode);
 
+    /*!
+     * \brief Проверить корректность имени входного файла
+     * \param[in] fileName имя входного файла
+     * \return true, если имя файла корректно
+     */
+    bool isInputFileCorrect(QString &fileName);
+
+    /*!
+     * \brief Проверить корректность имени выходного файла
+     * \param[in] fileName имя выходного файла
+     * \return true, если имя файла корректно
+     */
+    bool isOutputFileCorrect(QString &fileName);
+
 private:
     QStringList errorMessages =
     {

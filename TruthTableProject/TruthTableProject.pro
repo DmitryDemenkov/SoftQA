@@ -11,6 +11,7 @@ CONFIG -= app_bundle
 
 SOURCES += \
         errorcontroller.cpp \
+        filemanager.cpp \
         operations/and.cpp \
         main.cpp \
         node.cpp \
@@ -32,6 +33,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     errorcontroller.h \
+    filemanager.h \
     operations/and.h \
     node.h \
     operations/eq.h \

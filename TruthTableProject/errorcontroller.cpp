@@ -1,4 +1,7 @@
 #include <QRegExp>
+#include <QFile>
+#include <QDir>
+#include <QFileInfo>
 #include "errorcontroller.h"
 
 ErrorController::ErrorController() { }
@@ -74,6 +77,39 @@ bool ErrorController::isOperationCorrect(QDomNode &xNode)
 
     else if (children.length() > 2 || (attributeValue == "not" && children.length() > 1)) // если дочерних узлов слищкои много
         throwError(TOO_MANY_CHILDREN_IN_OPERATION, &attributeValue);
+
+    return true;
+}
+
+bool ErrorController::isInputFileCorrect(QString &fileName)
+{
+    QFile inputFile(fileName);
+    QDomDocument inputDom(fileName);
+    QString errorMsg;
+
+    if (!fileName.endsWith(".xml", Qt::CaseSensitive)) // если расширение файла некорректно
+        throwError(INCORRECT_INPUT_FILENAME);
+
+    else if (!inputFile.open(QIODevice::ReadOnly)) // если заданного файла не существует
+        throwError(INPUT_FILE_DOES_NOT_EXIST);
+
+    else if (!inputDom.setContent(&inputFile, true, &errorMsg)) // если файл содержит синтаксическую ошибку
+        throwError(MISTAKE_IN_INPUT_FILE, &errorMsg);
+
+    else
+        isRootNodeCorrect(inputDom.documentElement()); // проверить корректность корневого узла
+
+    inputFile.close();
+
+    return true;
+}
+
+bool ErrorController::isOutputFileCorrect(QString &fileName)
+{
+    QFileInfo outputFile(fileName);
+
+    if (!fileName.endsWith(".csv", Qt::CaseSensitive) || !outputFile.dir().exists())
+        throwError(INCORRECT_OUTPUT_FILENAME);
 
     return true;
 }

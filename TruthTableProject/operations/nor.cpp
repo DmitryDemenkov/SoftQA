@@ -1,9 +1,17 @@
 #include "nor.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Nor
+ */
+
+/*!
+ * \brief Установить характеристики операции стредка Пирса
+ */
 Nor::Nor()
 {
-    operationPriority = 0;
-    operationSign = QChar(0x2193);
+    operationPriority = 0;          /// Nor.operationPriority = 0
+    operationSign = QChar(0x2193);  /// Nor.operationSign = "↓"
 }
 
 Nor::~Nor() { }

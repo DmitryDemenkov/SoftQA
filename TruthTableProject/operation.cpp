@@ -8,6 +8,11 @@
 #include "operations/nand.h"
 #include "operations/nor.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Operation
+ */
+
 Operation::Operation()
 {
     leftOperand = NULL;

@@ -1,9 +1,17 @@
 #include "not.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Not
+ */
+
+/*!
+ * \brief Установить характеристики операции инверсия
+ */
 Not::Not()
 {
-    operationPriority = 5;
-    operationSign = "!";
+    operationPriority = 5; /// Not.operationPriority = 5
+    operationSign = "!";   /// Not.operationSign = "!"
 }
 
 Not::~Not() { }

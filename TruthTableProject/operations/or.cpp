@@ -1,9 +1,17 @@
 #include "or.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Or
+ */
+
+/*!
+ * \brief Установить характеристики операции дихъюнкция
+ */
 Or::Or()
 {
-    operationPriority = 3;
-    operationSign = "||";
+    operationPriority = 3; /// Or.operationPriority = 3
+    operationSign = "||";  /// Or.operationSign = "||"
 }
 
 Or::~Or() { }

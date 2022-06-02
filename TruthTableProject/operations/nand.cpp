@@ -1,9 +1,17 @@
 #include "nand.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Nand
+ */
+
+/*!
+ * \brief Установить характеристики операции щтрих Шеффера
+ */
 Nand::Nand()
 {
-    operationPriority = 0;
-    operationSign = "|";
+    operationPriority = 0; /// Nand.operationPriority = 0
+    operationSign = "|";   /// Nand.operationSign = "|"
 }
 
 Nand::~Nand() { }

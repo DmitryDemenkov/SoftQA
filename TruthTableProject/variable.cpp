@@ -1,5 +1,10 @@
 #include "variable.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Variable
+ */
+
 Variable::Variable()
 {
     value = 0;

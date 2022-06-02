@@ -1,9 +1,17 @@
 #include "and.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию And
+ */
+
+/*!
+ * \brief Установить характеристики операции конъюнкция
+ */
 And::And()
 {
-    operationPriority = 4;
-    operationSign = "&";
+    operationPriority = 4; /// And.operationPriority = 4
+    operationSign = "&";   /// And.operationSign = "&"
 }
 
 And::~And() { }

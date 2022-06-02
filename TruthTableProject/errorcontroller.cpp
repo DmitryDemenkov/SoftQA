@@ -4,6 +4,11 @@
 #include <QFileInfo>
 #include "errorcontroller.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию ErrorController
+*/
+
 ErrorController::ErrorController() { }
 
 bool ErrorController::isRootNodeCorrect(QDomElement xRootNode)

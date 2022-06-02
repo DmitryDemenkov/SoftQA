@@ -3,6 +3,11 @@
 #include "node.h"
 
 /*!
+ * \file
+ * \brief Файл, содержащий описание Operation
+ */
+
+/*!
  * \brief Класс, описывающий абстрактный узел
  *                 операции логического выражения
  */
@@ -10,37 +15,37 @@ class Operation : public Node
 {
 public:
     Operation();
-    virtual ~Operation();
+    virtual ~Operation()=0;
 
     /*!
      * \brief Получить левый операнд операции
-     * \return левый операнд
+     * \return Левый операнд
      */
     Node* getLeftOperand() const;
 
     /*!
      * \brief Получить правый операнд операции
-     * \return правый операнд
+     * \return Правый операнд
      */
     Node* getRightOperand() const;
 
     /*!
      * \brief Получить приоритет операции
-     * \return тип операции
+     * \return Приоритет операции
      */
     int getOperationPriority() const;
 
     /*!
      * \brief Задать операнды операции
-     * \param leftOperand левый операнд
-     * \param rightOperand правый операнд
+     * \param[in] leftOperand - левый операнд
+     * \param[in] rightOperand - правый операнд
      */
     void setOperands(Node* leftOperand, Node* rightOperand = NULL);
 
     /*!
      * \brief Создать операцию заданного типа
-     * \param name название типа операции
-     * \return
+     * \param[in] name - название типа операции
+     * \return Операция заданного типа
      */
     static Operation* getOperation(QString name);
 

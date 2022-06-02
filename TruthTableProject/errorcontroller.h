@@ -4,6 +4,11 @@
 #include <QDomNode>
 
 /*!
+ * \file
+ * \brief Файл, содержащий описание ErrorController
+*/
+
+/*!
  * \brief Класс, осуществляющий проверку входных данных
  */
 class ErrorController
@@ -11,64 +16,71 @@ class ErrorController
 public:
     ErrorController();
 
-    enum ErrorType ///> Перечисление, описывающее типы ошибок
+    //! Перечисление, описывающее типы ошибок
+    enum ErrorType
     {
-        INCORRECT_OUTPUT_FILENAME,          ///> Неверно задано расположение выходного файла
-        INPUT_FILE_DOES_NOT_EXIST,          ///> Входной файл не существует
-        INCORRECT_INPUT_FILENAME,           ///> Неверно задано расширение входного файла
-        TOO_MANY_CHILD_NODES_IN_ROOT,       ///> Слишком много дочерних узлов в корневом узле xml файла
-        NO_CHILD_NODES_IN_ROOT,             ///> В корневом узле xml файла отсутствуют дочерние узлы
-        VARIABLE_IN_ROOT,                   ///> Узел переменой является дочерним узлом корневого узла xml файла
-        TOO_MANY_ATTRIBUTES_IN_OPERATION,   ///> Узел операции содержит лишние атрибуты
-        NO_ATTRIBUTES_IN_OPERATION,         ///> Узел операции не содержит нужного атрибута
-        MISTAKE_IN_INPUT_FILE,              ///> Входной xml файл содержит синтаксическую ошибку
-        INCORRECT_NODE_NAME,                ///> Неподходящее имя узла
-        INCORRECT_ATTRIBUTE_IN_OPERATION,   ///> Неподходящее имя атрибута узла операции
-        INCORRECT_TYPE_OF_OPERATION,        ///> Неподходящее значение типа операции
-        NO_CHILDREN_IN_OPERATION,           ///> Узел операции не содержит дочерних узлов
-        TOO_MANY_CHILDREN_IN_OPERATION,     ///> Узел операции содержит слишком много дочерних узлов
-        CHILDREN_IN_VARIABLE,               ///> Узел переменной содержит дочерние узлы
-        ATTRIBUTE_IN_VARIABLE,              ///> Узел переменной содержит ненужные атрибуты
-        INCORRECT_VARIABLE_NAME,            ///> Неподходящее имя переменной
-        TOO_LONG_VARIABLE_NAME,             ///> Слишком длинное имя переменной
-        NO_MISTAKES                         ///> Нет ошибки
+        INCORRECT_OUTPUT_FILENAME,          ///< Неверно задано расположение выходного файла
+        INPUT_FILE_DOES_NOT_EXIST,          ///< Входной файл не существует
+        INCORRECT_INPUT_FILENAME,           ///< Неверно задано расширение входного файла
+        TOO_MANY_CHILD_NODES_IN_ROOT,       ///< Слишком много дочерних узлов в корневом узле xml файла
+        NO_CHILD_NODES_IN_ROOT,             ///< В корневом узле xml файла отсутствуют дочерние узлы
+        VARIABLE_IN_ROOT,                   ///< Узел переменой является дочерним узлом корневого узла xml файла
+        TOO_MANY_ATTRIBUTES_IN_OPERATION,   ///< Узел операции содержит лишние атрибуты
+        NO_ATTRIBUTES_IN_OPERATION,         ///< Узел операции не содержит нужного атрибута
+        MISTAKE_IN_INPUT_FILE,              ///< Входной xml файл содержит синтаксическую ошибку
+        INCORRECT_NODE_NAME,                ///< Неподходящее имя узла
+        INCORRECT_ATTRIBUTE_IN_OPERATION,   ///< Неподходящее имя атрибута узла операции
+        INCORRECT_TYPE_OF_OPERATION,        ///< Неподходящее значение типа операции
+        NO_CHILDREN_IN_OPERATION,           ///< Узел операции не содержит дочерних узлов
+        TOO_MANY_CHILDREN_IN_OPERATION,     ///< Узел операции содержит слишком много дочерних узлов
+        CHILDREN_IN_VARIABLE,               ///< Узел переменной содержит дочерние узлы
+        ATTRIBUTE_IN_VARIABLE,              ///< Узел переменной содержит ненужные атрибуты
+        INCORRECT_VARIABLE_NAME,            ///< Неподходящее имя переменной
+        TOO_LONG_VARIABLE_NAME,             ///< Слишком длинное имя переменной
+        NO_MISTAKES                         ///< Нет ошибки
     };
 
-    struct Error ///> Структура с информацией об ошибке
+    //! Структура с информацией об ошибке
+    struct Error
     {
-        ErrorType errorType;  ///> тип ошибки
-        QString errorMessege; ///> сообщение об ошибке
+        ErrorType errorType;  ///< Тип ошибки
+        QString errorMessege; ///< Сообщение об ошибке
     };
 
     /*!
      * \brief Проверить корректность узла переменной
-     * \param[in] xNode узел xml файла
+     * \param[in] xNode - узел xml файла
      * \return true, если узел не содержит ошибок
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     bool isVariableCorrect(QDomNode xNode);
 
     /*!
      * \brief Проверить корректность узла операции
-     * \param[in] xNode узел xml файла
+     * \param[in] xNode - узел xml файла
      * \return true, если узел не содержит ошибок
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     bool isOperationCorrect(QDomNode &xNode);
 
     /*!
      * \brief Проверить корректность имени входного файла
-     * \param[in] fileName имя входного файла
+     * \param[in] fileName - имя входного файла
      * \return true, если имя файла корректно
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     bool isInputFileCorrect(QString &fileName);
 
     /*!
      * \brief Проверить корректность имени выходного файла
-     * \param[in] fileName имя выходного файла
+     * \param[in] fileName - имя выходного файла
      * \return true, если имя файла корректно
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     bool isOutputFileCorrect(QString &fileName);
 
 private:
+    //! Список сообщений об ошибке
     QStringList errorMessages =
     {
         "Неверно указан файл для выходных данных.\nВозможно, указанного расположения не существует.",
@@ -89,19 +101,21 @@ private:
         "Узел переменной «%1» содержит ненужные атрибуты.\nУзел переменной не должен содержать атрибутов",
         "Некорректное имя переменной «%1».\nИмя переменной может содержать только буквы латинского алфавита, цифры и символ «_» и не может начинаться с цифр",
         "Слишком длинное имя переменной «%1».\nИмя переменной должно содержать не более 20 символов"
-    };  ///> Список сообщений об ошибке
+    };
 
     /*!
      * \brief Проверить корректность корневого узла xml файла
-     * \param[in] xRootNode корневой узел
+     * \param[in] xRootNode - корневой узел
      * \return true, если узел не содержит ошибок
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     bool isRootNodeCorrect(QDomElement xRootNode);
 
     /*!
      * \brief Выбросит исключение с информацией об ошибке
-     * \param[in] errorType тип ошибки
-     * \param additionMsg доролнительная информация об ошибке
+     * \param[in] errorType - тип ошибки
+     * \param[in] additionMsg - дополнительная информация об ошибке
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     void throwError(ErrorType errorType, QString* additionMsg = NULL);
 

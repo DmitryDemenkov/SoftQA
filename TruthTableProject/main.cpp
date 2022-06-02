@@ -4,8 +4,13 @@
 #include "truthtablesystem.h"
 
 /*!
+ * \file
+ * \brief Файл, содержащий код самой программы
+ */
+
+/*!
  * \brief Вывести в консоль сообщение об ошибке
- * \param[in] errorMessage сообщение об ошибке
+ * \param[in] errorMessage - сообщение об ошибке
  */
 void errorPrint(QString &errorMessage)
 {

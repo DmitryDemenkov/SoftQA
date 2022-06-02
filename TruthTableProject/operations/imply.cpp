@@ -1,9 +1,17 @@
 #include "imply.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Imply
+ */
+
+/*!
+ * \brief Установить характеристики операции импликация
+ */
 Imply::Imply()
 {
-    operationPriority = 2;
-    operationSign = "=>";
+    operationPriority = 2; /// Imply.operationPriority = 2
+    operationSign = "=>";  /// Imply.operationSign = "=>"
 }
 
 Imply::~Imply() { }

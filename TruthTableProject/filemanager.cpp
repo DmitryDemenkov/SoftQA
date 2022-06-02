@@ -1,5 +1,10 @@
 #include "filemanager.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию FileManager
+ */
+
 FileManager::FileManager() { }
 
 bool FileManager::setInputFile(QString filename)

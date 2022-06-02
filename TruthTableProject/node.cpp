@@ -1,5 +1,10 @@
 #include "node.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Node
+ */
+
 Node::Node()
 {
     string_id = "";

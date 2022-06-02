@@ -1,9 +1,17 @@
 #include "eq.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию Eq
+ */
+
+/*!
+ * \brief Установить характеристики операции эквиваленция
+ */
 Eq::Eq()
 {
-    operationPriority = 1;
-    operationSign = "<=>";
+    operationPriority = 1; /// Eq.operationPriority = 1
+    operationSign = "<=>"; /// Eq.operationSign = "<=>"
 }
 
 Eq::~Eq() { }

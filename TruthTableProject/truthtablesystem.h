@@ -7,6 +7,10 @@
 #include "operation.h"
 #include "errorcontroller.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий описание TruthTableSystem
+ */
 
 /*!
  * \brief Подсистема, составляющая таблицу истинности
@@ -20,24 +24,24 @@ public:
 
     /*!
      * \brief Задать корень выражения в виде xml узел
-     * \param node xml узел
+     * \param[in] xNode - xml узел
      */
     void setXRootNode(QDomNode xNode);
 
     /*!
      * \brief Получить таблицу истинности
      *                       и список подвыражений заданного выражения
-     * \param values матрица, содержащая таблицу истинности
-     * \return список подвыражений
+     * \param[out] values - матрица, содержащая таблицу истинности
+     * \return Список подвыражений
      */
     QStringList getTruthTable(QVector<QVector<int>> & values);
 
 private:
-    QDomNode xRootNode;   ///> корневой xml узел входного верева
-    int variablesAmount;  ///> количество уникальных переменных в выражении
-    QVector<Node*> nodes; ///> список подвыражений исходного выражения
-    QVector<QVector<int>> values; ///> матрица значений таблицы истинности
-    ErrorController errorController; ///> проверщик ошибок в узлах xml файла
+    QDomNode xRootNode;   ///< Корневой xml узел входного верева
+    int variablesAmount;  ///< Количество уникальных переменных в выражении
+    QVector<Node*> nodes; ///< Список подвыражений исходного выражения
+    QVector<QVector<int>> values; ///< Матрица значений таблицы истинности
+    ErrorController errorController; ///< Проверщик ошибок в узлах xml файла
 
     /*!
      * \brief Создать таблицу истинности
@@ -48,21 +52,22 @@ private:
     /*!
      * \brief Преобразовать xml узел в объект класса Node
      *                               и добавить его в вектор
-     * \param node xml узел
-     * \return указатель на созданный Node
+     * \param[in] node - xml узел
+     * \return Указатель на созданный Node
+     * \throw ErrorController::Error - сообщение об ошибке
      */
     Node* parseExpression(QDomNode & xNode);
 
     /*!
      * \brief Найти узел в векторе
-     * \param node искомый узел
-     * \return указатель на узел из вектора
+     * \param[in] node - искомый узел
+     * \return Указатель на узел из вектора
      */
     Node* findNode(Node* node);
 
     /*!
      * \brief Вставить узел в вектор
-     * \param node узел, который необходимо вставить
+     * \param[in] node - узел, который необходимо вставить
      * \return 1, если была вставлена переменная, 0, если операция
      */
     int insertNode(Node* node);

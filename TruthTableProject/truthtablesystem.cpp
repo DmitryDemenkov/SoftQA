@@ -1,5 +1,10 @@
 #include "truthtablesystem.h"
 
+/*!
+ * \file
+ * \brief Файл, содержащий реализацию TruthTableSystem
+ */
+
 TruthTableSystem::TruthTableSystem()
 {
     variablesAmount = 0;

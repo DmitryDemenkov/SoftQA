@@ -21,20 +21,19 @@ void TruthTableSystem::setXRootNode(QDomNode xNode)
     this->xRootNode = xNode;
 }
 
-QStringList TruthTableSystem::getTruthTable(QVector<QVector<int>> &values)
+short *TruthTableSystem::getTruthTable(QStringList &subExpressions, int &rowAmount, int &columnAmount)
 {
     parseExpression(xRootNode); // составить векор узлов выражения на основе его корня
 
     // Составить список подвыражения на основе строковых представлений узлов
-    QStringList subExpressions;
     for (int i = 0; i < nodes.length(); i++)
         subExpressions.append(nodes[i]->getStringId());
 
     // Составить таблицу истинности на основе векора узлов
-    makeTruthTable();
+    rowAmount = pow(2, variablesAmount);
+    columnAmount = nodes.length();
 
-    values = this->values;
-    return subExpressions;
+    return makeTruthTable();
 }
 
 Node* TruthTableSystem::parseExpression(QDomNode &xNode)
@@ -116,15 +115,16 @@ int TruthTableSystem::insertNode(Node *node)
     return isVariable;
 }
 
-void TruthTableSystem::makeTruthTable()
+short *TruthTableSystem::makeTruthTable()
 {
     // Считать кол-во строк в таблице равным 2^variableAmount
-    int amount = pow(2, variablesAmount);
+    int rowAmount = pow(2, variablesAmount);
+    int columnAmount = nodes.length();
 
-    for (int i = 0; i < amount; i++) // для каждого значения от 0 до кол-ва строк
+    short* values = (short*)malloc(rowAmount * columnAmount * sizeof (short));
+
+    for (int i = 0; i < rowAmount; i++) // для каждого значения от 0 до кол-ва строк
     {
-        QVector<int> vector;
-
         // Преобразовать текущее значение в двоичной системе
         QString stringAmount = QString("%1").arg(i, variablesAmount, 2, QChar('0'));
 
@@ -133,10 +133,9 @@ void TruthTableSystem::makeTruthTable()
             ((Variable*)nodes[j])->setValue(QString(stringAmount[j]).toInt());
 
         // Добавить в строку значения всех узлов выражения
-        for (int j = 0; j < nodes.length(); j++)
-            vector.append(nodes[j]->getValue());
+        for (int j = 0; j < columnAmount; j++)
+            *(values + i*columnAmount + j) = nodes[j]->getValue();
 
-        // Добавить строку в таблицу
-        values.append(vector);
     }
+    return values;
 }

@@ -43,11 +43,13 @@ int main(int argc, char *argv[])
         TruthTableSystem table = TruthTableSystem();
         table.setXRootNode(node);
 
-        QVector<QVector<int>> val;
-        QStringList list = table.getTruthTable(val);
+        QStringList list;
+        int rowAmount;
+        int columnAmount;
+        short* val = table.getTruthTable(list, rowAmount, columnAmount);
 
         // Записать полученные данные в выходной файл
-        manager.writeOutputFile(list, val);
+        manager.writeOutputFile(list, val, rowAmount, columnAmount);
 
     }
     catch (ErrorController::Error error)

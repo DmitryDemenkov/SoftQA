@@ -34,20 +34,20 @@ public:
      * \param[out] values - матрица, содержащая таблицу истинности
      * \return Список подвыражений
      */
-    QStringList getTruthTable(QVector<QVector<int>> & values);
+    short* getTruthTable(QStringList &subExpressions, int &rowAmount, int &columnAmount);
 
 private:
     QDomNode xRootNode;   ///< Корневой xml узел входного верева
     int variablesAmount;  ///< Количество уникальных переменных в выражении
     QVector<Node*> nodes; ///< Список подвыражений исходного выражения
-    QVector<QVector<int>> values; ///< Матрица значений таблицы истинности
+    //QVector<QVector<int>> values; ///< Матрица значений таблицы истинности
     ErrorController errorController; ///< Проверщик ошибок в узлах xml файла
 
     /*!
      * \brief Создать таблицу истинности
      *          на основе узлов дерева выражения
      */
-    void makeTruthTable();
+    short* makeTruthTable();
 
     /*!
      * \brief Преобразовать xml узел в объект класса Node

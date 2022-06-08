@@ -43,36 +43,47 @@ QDomNode FileManager::getXRootNode()
     return node;
 }
 
-void FileManager::writeOutputFile(QStringList &subExpressions, QVector<QVector<int>> &values)
+void FileManager::writeOutputFile(QStringList &subExpressions, short *values, int rowAmount, int columnAmount)
 {
     QFile outputFile(outputFilename);
     outputFile.open(QIODevice::WriteOnly);
     QTextStream outputStream(&outputFile);
 
     // Добавить строковые представления узлов в заголовки колонок
-    QString string = "";
-    for (int i = 0; i < subExpressions.length(); i++)
+    QString header = "";
+    for (int i = 0; i < columnAmount; i++)
     {
-        string.append(subExpressions[i]);
+        header.append(subExpressions[i]);
 
-        if (i < subExpressions.length() - 1)
-            string.append(";");
+        if (i < columnAmount - 1)
+            header.append(";");
+        else
+            header.append("\n");
     }
-    outputStream << string << Qt::endl;
 
     // Преобразовать строки матрицы значений в строки выходного файла
-    for (int i = 0; i < values.length(); i++)
-    {
-        string = "";
-        for (int j = 0; j < values[i].length(); j++)
-        {
-            QString number = QString::number(values[i][j]);
-            string.append(number);
+    char* vals = (char*)malloc(2*rowAmount*columnAmount*sizeof(char)+1);
 
-            if (j < values[i].length() - 1)
-                string.append(";");
+    int k = 0;
+    for(int i = 0; i < rowAmount; i++)
+    {
+        for (int j = 0; j < columnAmount; j++, k+=2)
+        {
+            char val = *(values + i*columnAmount + j) + 48;
+
+            *(vals + k) = val;
+
+            if (j < columnAmount - 1)
+                *(vals + k+1) = ';';
+            else
+                *(vals + k+1) = '\n';
         }
-        outputStream << string << Qt::endl;
     }
+    *(vals + k) = '\0';
+
+    outputStream << header;
+    outputStream << vals;
     outputFile.close();
+    free(values);
+    free(vals);
 }

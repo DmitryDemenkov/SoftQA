@@ -45,7 +45,7 @@ public:
      * \param[in] subExpressions - список подвыражений
      * \param[in] values таблица - истинности
      */
-    void writeOutputFile(QStringList &subExpressions, QVector<QVector<int>> &values);
+    void writeOutputFile(QStringList &subExpressions, short* values, int rowAmount, int columnAmount);
 
 private:
     QString inputFilename; ///< Имя входного файла
